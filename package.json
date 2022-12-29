@@ -1,20 +1,31 @@
 {
-  "dependencies": {
-    "@11ty/eleventy": "1.0.1",
-    "autoprefixer": "^10.4.2",
-    "concurrently": "7.0.0",
-    "cssnano": "5.1.12",
-    "eslint": "8.17.0",
-    "md5": "2.3.0",
-    "postcss": "^8.4.8",
-    "postcss-cli": "^9.1.0",
-    "sass": "1.53.0"
-  },
+  "name": "glitch-hello-eleventy",
+  "version": "0.1.0",
+  "description": "A simple blog, set up with Eleventy.",
   "scripts": {
-    "sass": "npx sass src/scss/style.scss:_site/css/style.css",
-    "postcss": "npx postcss _site/css/*.css --use autoprefixer -d _site/css",
-    "prebuild": "npm run sass && npm run postcss",
-    "start": "NODE_ENV=development BASE_URL=http://localhost:8080 concurrently 'eleventy --serve --quiet' 'yarn run sass --watch'",
+    "start": "eleventy --serve",
     "build": "NODE_ENV=production eleventy"
-  }
+  },
+  "dependencies": {
+    "eleventy-plugin-seo": "0.5.2",
+    "luxon": "^3.1.1"
+  },
+  "devDependencies": {
+    "@11ty/eleventy": "^1.0.0"
+  },
+  "engines": {
+    "node": "12"
+  },
+  "repository": {
+    "url": "https://glitch.com/edit/#!/glitch-hello-eleventy"
+  },
+  "glitch": {
+    "projectType": "generated_static"
+  },
+  "license": "MIT",
+  "keywords": [
+    "node",
+    "glitch",
+    "express"
+  ]
 }
